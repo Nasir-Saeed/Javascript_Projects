@@ -23,12 +23,10 @@
 <body>
     <h2>XMLHttpRequest | Project</h2>
     <div id="result"></div>
-
 </body>
 
 <script>
-
-    let url = 'https://api.github.com/users/nasir-saeed'
+    let url = 'https://api.github.com/users/nasir-saeed';
     let xhr = new XMLHttpRequest();
 
     xhr.open('GET', url);
@@ -37,18 +35,14 @@
             let data = JSON.parse(this.responseText)
             // console.log(data)
             document.getElementById("result").innerHTML =
-                `
-            
-             <div class="card m-5" style="width: 18rem;">
-        <img src=${data.avatar_url} class="card-img-top" alt=${data.name}> 
-        <div class="card-body">
-            <h5 class="card-title">${data.name}</h5>
-            <p class="card-text">${data.bio}</p>
-            <a href=${data.html_url} class="btn btn-primary">Go to GitHub Profile</a>
-        </div>
-    </div>
-            
-            `
+                `<div class="card m-5" style="width: 18rem;">
+                <img src=${data.avatar_url} class="card-img-top" alt=${data.name}> 
+                <div class="card-body">
+                    <h5 class="card-title">${data.name}</h5>
+                    <p class="card-text">${data.bio}</p>
+                    <a href=${data.html_url} class="btn btn-primary">Go to GitHub Profile</a>
+                </div>
+            </div>`
         }
     }
     xhr.send();
