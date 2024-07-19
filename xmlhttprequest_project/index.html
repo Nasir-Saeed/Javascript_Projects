@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>XML REQUEST API | Nasir Saeed</title>
+</head>
+<style>
+    body {
+        background-color: #242424;
+        padding: 100px;
+    }
+
+    #result {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <h2>XMLHttpRequest | Project</h2>
+    <div id="result"></div>
+
+</body>
+
+<script>
+
+    let url = 'https://api.github.com/users/nasir-saeed'
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', url);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            let data = JSON.parse(this.responseText)
+            // console.log(data)
+            document.getElementById("result").innerHTML =
+                `
+            
+             <div class="card m-5" style="width: 18rem;">
+        <img src=${data.avatar_url} class="card-img-top" alt=${data.name}> 
+        <div class="card-body">
+            <h5 class="card-title">${data.name}</h5>
+            <p class="card-text">${data.bio}</p>
+            <a href=${data.html_url} class="btn btn-primary">Go to GitHub Profile</a>
+        </div>
+    </div>
+            
+            `
+        }
+    }
+    xhr.send();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</html>
