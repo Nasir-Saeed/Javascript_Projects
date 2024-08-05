@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.heading {
+    background-color: #2D2A32;
+    height: 5rem;
+    line-height: 5rem;
+    color: #FAFDF6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 4rem;
+}
+
+.image-box {
+
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: all .5s;
+
+}
+
+.image-box:hover {
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+
+.counter-01 p {
+    font-size: 3rem;
+}
+
+#user-count,
+#computer-count {
+    font-size: 4rem;
+}
+
+.para {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result {
+    font-size: 3rem;
+    background-color: #0E7C7B;
+    color: #E7EB90;
+    display: inline;
+    padding: 1rem;
+}
+
+.bg-img {
+    background-image: url('./images/moment.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 767px) {
+    .choices {
+        display: block;
+    }
+}
