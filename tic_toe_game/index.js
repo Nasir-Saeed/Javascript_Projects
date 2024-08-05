@@ -6,6 +6,7 @@ let resetGames = document.querySelector("#reset-game")
 
 let turn0 = true;
 
+let count = 0;
 
 let pattern = [
     [0, 1, 2],
@@ -20,6 +21,7 @@ let pattern = [
 
 let newGame = () => {
     turn0 = true;
+    count = 0;
     enabledBoxes();
     winnerContainer.classList.add("hide")
 }
@@ -36,10 +38,21 @@ boxes.forEach((box) => {
             turn0 = true
         }
         box.disabled = true;
+        count++;
 
-        checkWinner()
+        let isWinner = checkWinner()
+        if (count === 9 && !isWinner) {
+            console.log(count)
+            gameDraw()
+        }
     })
 })
+
+const gameDraw = () => {
+    winnerMess.innerText = "Game Was A Draw"
+    winnerContainer.classList.remove("hide");
+    disabledBoxes()
+}
 
 let disabledBoxes = () => {
     for (let box of boxes) {
