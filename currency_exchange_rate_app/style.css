@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2C666E;
+}
+
+.currency-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+}
+
+.currency-exchange-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.currency-exchange-form form {
+    background-color: #E3DCC2;
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+form input {
+    width: 90%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+
+}
+
+form select {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.from {
+    display: flex;
+    background-color: #EFE9E7;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.to {
+    display: flex;
+    background-color: #EFE9E7;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+#exchange-rate {
+    padding: 20px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+}
+#exchange-rate:hover {
+   background-color: #17183B;
+   color: #FEFEE3;
+   transition: all .3s;
+}
+
+#result{
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: cursive;
+    color: #0B032D;
+    font-weight: 800;
+}

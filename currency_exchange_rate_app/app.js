@@ -1,6 +1,5 @@
 let apiKeys = "your-api"
 let URL = `https://api.currencyfreaks.com/v2.0/rates/latest?apikey=${apiKeys}`
-
 let exchangeRateBtn = document.getElementById("exchange-rate")
 let amountInput = document.getElementById("amount")
 let dropdown = document.querySelectorAll(".dropdown select")
@@ -26,7 +25,6 @@ const allCountryCode = async () => {
                 } else if (select.name === "to" && codeList === "PKR") {
                     newOption.selected = "selected"
                 }
-                // console.log(codeList)
             }
         }
     } catch (error) {
@@ -37,8 +35,7 @@ const allCountryCode = async () => {
 
 exchangeRateBtn.addEventListener('click', (evt) => {
     evt.preventDefault()
-
-    updateCurrency()
+    updateCurrency();
 })
 
 
@@ -52,10 +49,7 @@ const updateCurrency = () => {
         amountInput.value = "1"
     }
     currencyExchange()
-
 }
-
-
 
 
 const currencyExchange = async () => {
@@ -75,17 +69,7 @@ const currencyExchange = async () => {
     let finalAmount = amount * conversionRate
     result.innerText = `${amount} ${fromCurrency} = ${finalAmount.toFixed()} ${toCurrency}`
     console.log(finalAmount)
-
-    // console.log(data.rates)
-
-    // for (const currencyKeys in allRates) {
-    //     if (allRates.hasOwnProperty(currencyKeys)) {
-    //         let currencyVal = allRates[currencyKeys];
-    //         console.log(`${currencyVal}`)
-    //         let final = amountInput.value * currencyVal
-    //         result.innerText = final
-    //     }
-    // }
 }
+
 
 allCountryCode()
