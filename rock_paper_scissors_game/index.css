@@ -75,7 +75,14 @@ body {
 }
 
 @media (max-width: 767px) {
-    .choices {
-        display: block;
+    .image-box {
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    .bg-img {
+        background-size: contain;
+        background-position: center;
     }
 }
